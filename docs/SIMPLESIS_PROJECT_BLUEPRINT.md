@@ -4,7 +4,7 @@
 **Project:** SimpleSIS  
 **Repository:** `https://github.com/paulquimpo-dev/simple-sis`  
 **Authoritative implementation branch:** `main`  
-**Document version:** 1.1  
+**Document version:** 1.2  
 **Last updated:** August 18, 2026  
 **Current implementation baseline:** commit `6dd3422`
 
@@ -244,7 +244,7 @@ Last complete matrix run: August 18, 2026, against local PostgreSQL 18.
 | Documentation | Complete baseline | README and teacher guide present |
 | Final teacher review/approval | Complete for student-scaffold baseline | Teacher directed creation of student version |
 | `portfolio` branch | Not started | Intentionally deferred |
-| `simple-sis-student-pt` | Local scaffold complete; GitHub publication pending | Independent one-commit history, build/startup/TODO audit passed |
+| `simple-sis-student-pt` | Published and remotely verified | Independent one-commit history, build/startup/TODO/leakage audits passed |
 
 ## 12. Decision log
 
@@ -265,7 +265,6 @@ Last complete matrix run: August 18, 2026, against local PostgreSQL 18.
 
 - Decide whether the unused default Privacy page should remain as harmless template content or be removed before freezing `main`.
 - Before creating `portfolio`, define exactly which enhancements belong there and which must remain absent from the student PT.
-- Complete GitHub publication and final remote clean-clone verification for `simple-sis-student-pt`.
 - After `main` approval, compare this document against the master blueprint and update only the PT sections affected by the completed implementation.
 
 ## 14. Change log
@@ -276,6 +275,7 @@ Every material project revision must add an entry. Use one row per cohesive chan
 | --- | --- | --- | --- | --- | --- |
 | 2026-08-18 | 1.0 | `main` / `eb446ce` | Recorded the completed teacher-reference baseline, exact technical choices, CRUD behavior, persistence evidence, and downstream repository rules. | Full matrix already passed | Establishes alignment source for master PT, portfolio, and student scaffold |
 | 2026-08-18 | 1.1 | Student scaffold `f315fd7`; related teacher documentation update | Created the independent student scaffold with provided infrastructure, stable TODO gaps, student README/checklist/rubric, one clean commit, and no teacher Git history. | Restore/build zero warnings; migration compatibility; starter HTTP startup; TODO and leakage audits | Student repository is ready for GitHub publication and remote clean-clone verification |
+| 2026-08-18 | 1.2 | Student remote `paulquimpo-dev/simple-sis-student-pt` / `f315fd7` | Published the student repository and audited a fresh remote clone. | One commit, one source branch, zero tags, 28 tracked TODO references, no teacher guide/living blueprint, restore and build with zero warnings | Student scaffold is technically ready for teacher student-view review |
 
 ### Required entry format for future changes
 
@@ -352,7 +352,7 @@ After the teacher declares `SimpleSIS/main` complete:
 
 - [x] The approved teacher baseline is recorded.
 - [x] Student TODO/checklist/rubric mapping is complete.
-- [ ] Remote clean-clone setup and starter behavior pass.
+- [x] Remote clean-clone restore and zero-warning build pass.
 - [x] Provided migration compatibility and seed infrastructure pass.
 - [x] Local Git-history and file-content leakage audits pass.
-- [ ] Teacher performs a final student-view review.
+- [ ] Teacher performs a final student-view review before classroom distribution.
