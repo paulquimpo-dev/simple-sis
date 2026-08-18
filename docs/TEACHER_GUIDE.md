@@ -40,6 +40,16 @@ These stable IDs should be used when the separate student scaffold is independen
 
 The student repository must contain hints and incomplete behavior only. Do not copy this repository's Git directory, branches, tags, commits, backup files, or completed handlers into it.
 
+## Student guided lab
+
+The student repository includes `GUIDED_LAB.md`, a progressive laboratory guide organized as:
+
+```text
+Setup → READ → CREATE → UPDATE → DELETE → Validation → Final Testing
+```
+
+Each stage provides goals, concept reminders, TODO locations, guided tasks, non-solution hints, observable checkpoints, reasoning challenges, and troubleshooting. The guide names the required EF Core operations conceptually but does not include completed handler statements. Students should follow the guided lab first and use `PT_CHECKLIST.md` as the concise completion and scoring reference.
+
 ## Required test matrix
 
 - [ ] Application starts.

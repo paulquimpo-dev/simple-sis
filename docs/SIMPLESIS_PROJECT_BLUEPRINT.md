@@ -4,7 +4,7 @@
 **Project:** SimpleSIS  
 **Repository:** `https://github.com/paulquimpo-dev/simple-sis`  
 **Authoritative implementation branch:** `main`  
-**Document version:** 1.2  
+**Document version:** 1.3  
 **Last updated:** August 18, 2026  
 **Current implementation baseline:** commit `6dd3422`
 
@@ -244,7 +244,7 @@ Last complete matrix run: August 18, 2026, against local PostgreSQL 18.
 | Documentation | Complete baseline | README and teacher guide present |
 | Final teacher review/approval | Complete for student-scaffold baseline | Teacher directed creation of student version |
 | `portfolio` branch | Not started | Intentionally deferred |
-| `simple-sis-student-pt` | Published and remotely verified | Independent one-commit history, build/startup/TODO/leakage audits passed |
+| `simple-sis-student-pt` | Published with guided lab | Independent history, build/startup/TODO/leakage audits passed; guided lab aligned to all TODO IDs |
 
 ## 12. Decision log
 
@@ -260,6 +260,7 @@ Last complete matrix run: August 18, 2026, against local PostgreSQL 18.
 | 2026-08-18 | Share Student form markup through `_StudentForm.cshtml`. | Keeps Create/Edit consistent while remaining easy to explain. |
 | 2026-08-18 | Freeze the current `main` behavior as the student-scaffold baseline before portfolio work. | Ensures students receive the same architecture and expected output as the completed teacher reference. |
 | 2026-08-18 | Use stable TODO IDs across READ, CREATE, UPDATE, DELETE, and validation. | Makes checkpoints, teacher answers, tests, and rubric categories traceable. |
+| 2026-08-18 | Provide a progressive guided lab without completed solution statements. | Gives beginners enough structure to proceed while preserving reasoning, implementation, persistence, and explanation challenges. |
 
 ## 13. Open decisions and alignment issues
 
@@ -276,6 +277,7 @@ Every material project revision must add an entry. Use one row per cohesive chan
 | 2026-08-18 | 1.0 | `main` / `eb446ce` | Recorded the completed teacher-reference baseline, exact technical choices, CRUD behavior, persistence evidence, and downstream repository rules. | Full matrix already passed | Establishes alignment source for master PT, portfolio, and student scaffold |
 | 2026-08-18 | 1.1 | Student scaffold `f315fd7`; related teacher documentation update | Created the independent student scaffold with provided infrastructure, stable TODO gaps, student README/checklist/rubric, one clean commit, and no teacher Git history. | Restore/build zero warnings; migration compatibility; starter HTTP startup; TODO and leakage audits | Student repository is ready for GitHub publication and remote clean-clone verification |
 | 2026-08-18 | 1.2 | Student remote `paulquimpo-dev/simple-sis-student-pt` / `f315fd7` | Published the student repository and audited a fresh remote clone. | One commit, one source branch, zero tags, 28 tracked TODO references, no teacher guide/living blueprint, restore and build with zero warnings | Student scaffold is technically ready for teacher student-view review |
+| 2026-08-18 | 1.3 | Student remote commit `2ab19e7` | Added `GUIDED_LAB.md` and linked it from the student README. The lab covers setup, CRUD, validation, restart persistence, troubleshooting, reflection, and optional challenges without completed handler code. | Zero-warning build; all 11 code TODO IDs represented; local links verified; completed-handler leakage pattern scan passed | Student instructions now support a structured lab sequence while retaining assessed challenge |
 
 ### Required entry format for future changes
 
@@ -352,6 +354,7 @@ After the teacher declares `SimpleSIS/main` complete:
 
 - [x] The approved teacher baseline is recorded.
 - [x] Student TODO/checklist/rubric mapping is complete.
+- [x] Guided lab stages and challenge checkpoints align with every code TODO ID.
 - [x] Remote clean-clone restore and zero-warning build pass.
 - [x] Provided migration compatibility and seed infrastructure pass.
 - [x] Local Git-history and file-content leakage audits pass.
