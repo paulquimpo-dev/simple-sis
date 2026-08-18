@@ -4,9 +4,9 @@
 **Project:** SimpleSIS  
 **Repository:** `https://github.com/paulquimpo-dev/simple-sis`  
 **Authoritative implementation branch:** `main`  
-**Document version:** 1.0  
+**Document version:** 1.1  
 **Last updated:** August 18, 2026  
-**Current implementation baseline:** commit `eb446ce`
+**Current implementation baseline:** commit `6dd3422`
 
 ## 1. Purpose
 
@@ -242,9 +242,9 @@ Last complete matrix run: August 18, 2026, against local PostgreSQL 18.
 | UPDATE | Complete | Save and restart persistence verified |
 | DELETE | Complete | Confirmation and restart absence verified |
 | Documentation | Complete baseline | README and teacher guide present |
-| Final teacher review/approval | Pending | Teacher confirmation required |
+| Final teacher review/approval | Complete for student-scaffold baseline | Teacher directed creation of student version |
 | `portfolio` branch | Not started | Intentionally deferred |
-| `simple-sis-student-pt` | Not started | Intentionally deferred |
+| `simple-sis-student-pt` | Local scaffold complete; GitHub publication pending | Independent one-commit history, build/startup/TODO audit passed |
 
 ## 12. Decision log
 
@@ -258,13 +258,14 @@ Last complete matrix run: August 18, 2026, against local PostgreSQL 18.
 | 2026-08-18 | Validate GradeLevel from 7 through 12. | Resolves the range left open in earlier planning text. |
 | 2026-08-18 | Prefer synchronous direct EF Core handlers. | Avoids making `async`/`await` or architectural abstractions hidden prerequisites. |
 | 2026-08-18 | Share Student form markup through `_StudentForm.cshtml`. | Keeps Create/Edit consistent while remaining easy to explain. |
+| 2026-08-18 | Freeze the current `main` behavior as the student-scaffold baseline before portfolio work. | Ensures students receive the same architecture and expected output as the completed teacher reference. |
+| 2026-08-18 | Use stable TODO IDs across READ, CREATE, UPDATE, DELETE, and validation. | Makes checkpoints, teacher answers, tests, and rubric categories traceable. |
 
 ## 13. Open decisions and alignment issues
 
-- Obtain explicit teacher approval that the current `main` implementation is the final PT reference baseline.
 - Decide whether the unused default Privacy page should remain as harmless template content or be removed before freezing `main`.
 - Before creating `portfolio`, define exactly which enhancements belong there and which must remain absent from the student PT.
-- Before generating the student repository, finalize the TODO distribution, checklist, rubric mapping, and expected amount of student-written validation work.
+- Complete GitHub publication and final remote clean-clone verification for `simple-sis-student-pt`.
 - After `main` approval, compare this document against the master blueprint and update only the PT sections affected by the completed implementation.
 
 ## 14. Change log
@@ -274,6 +275,7 @@ Every material project revision must add an entry. Use one row per cohesive chan
 | Date | Blueprint version | Branch/commit | Change | Tests rerun | Downstream impact |
 | --- | --- | --- | --- | --- | --- |
 | 2026-08-18 | 1.0 | `main` / `eb446ce` | Recorded the completed teacher-reference baseline, exact technical choices, CRUD behavior, persistence evidence, and downstream repository rules. | Full matrix already passed | Establishes alignment source for master PT, portfolio, and student scaffold |
+| 2026-08-18 | 1.1 | Student scaffold `f315fd7`; related teacher documentation update | Created the independent student scaffold with provided infrastructure, stable TODO gaps, student README/checklist/rubric, one clean commit, and no teacher Git history. | Restore/build zero warnings; migration compatibility; starter HTTP startup; TODO and leakage audits | Student repository is ready for GitHub publication and remote clean-clone verification |
 
 ### Required entry format for future changes
 
@@ -333,12 +335,12 @@ After the teacher declares `SimpleSIS/main` complete:
 
 ### Freeze `main` only when
 
-- [ ] Teacher explicitly approves the implementation.
+- [x] Teacher explicitly approves the implementation for student-scaffold generation.
 - [x] Full CRUD/validation/persistence matrix passes.
 - [x] Documentation matches code and migration.
 - [x] No real credentials are committed.
 - [x] Scope remains Grade-12 appropriate.
-- [ ] All open `main` decisions in Section 13 are resolved or deliberately deferred.
+- [x] Remaining non-blocking `main` decisions are deliberately deferred.
 
 ### Begin `portfolio` only when
 
@@ -348,9 +350,9 @@ After the teacher declares `SimpleSIS/main` complete:
 
 ### Publish the student repository only when
 
-- [ ] The approved teacher baseline is recorded.
-- [ ] Student TODO/checklist/rubric mapping is complete.
-- [ ] Clean-clone setup and starter behavior pass.
-- [ ] Migration and seed READ behavior pass.
-- [ ] Git-history and file-content leakage audits pass.
+- [x] The approved teacher baseline is recorded.
+- [x] Student TODO/checklist/rubric mapping is complete.
+- [ ] Remote clean-clone setup and starter behavior pass.
+- [x] Provided migration compatibility and seed infrastructure pass.
+- [x] Local Git-history and file-content leakage audits pass.
 - [ ] Teacher performs a final student-view review.

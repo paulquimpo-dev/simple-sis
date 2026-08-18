@@ -28,14 +28,15 @@ These stable IDs should be used when the separate student scaffold is independen
 | --- | --- | --- |
 | `TODO-PT-READ-01` | `Pages/Students/Index.cshtml.cs` — `OnGet` | Seed Students are retrieved |
 | `TODO-PT-READ-02` | `Pages/Students/Index.cshtml` — table body | All five visible fields display |
-| `TODO-PT-CREATE-01` | `Pages/Students/Create.cshtml.cs` — `OnPost` | Valid Student is saved |
-| `TODO-PT-CREATE-02` | `Pages/Students/Create.cshtml` and `_StudentForm.cshtml` | Form binds and displays feedback |
+| `TODO-PT-CREATE-01` | `Pages/Students/Create.cshtml.cs` — `ModelState` check | Invalid input redisplays without saving |
+| `TODO-PT-CREATE-02` | `Pages/Students/Create.cshtml.cs` — `Add`/`SaveChanges` | Valid Student is saved |
 | `TODO-PT-UPDATE-01` | `Pages/Students/Edit.cshtml.cs` — `OnGet` | Existing values load |
-| `TODO-PT-UPDATE-02` | `Pages/Students/Edit.cshtml.cs` — `OnPost` | Changes persist |
+| `TODO-PT-UPDATE-02` | `Pages/Students/Edit.cshtml.cs` — `ModelState` check | Invalid changes do not save |
+| `TODO-PT-UPDATE-03` | `Pages/Students/Edit.cshtml.cs` — find/copy/save | Changes persist |
 | `TODO-PT-DELETE-01` | `Pages/Students/Delete.cshtml.cs` — `OnGet` | Confirmation loads without deletion |
 | `TODO-PT-DELETE-02` | `Pages/Students/Delete.cshtml.cs` — `OnPost` | Confirmed record is removed |
-| `TODO-PT-VALIDATE-01` | Create/Edit `OnPost` handlers | Invalid `ModelState` prevents saving |
-| `TODO-PT-VALIDATE-02` | `_StudentForm.cshtml` | Useful messages display |
+| `TODO-PT-VALIDATE-01` | `_StudentForm.cshtml` — form groups | All required inputs bind correctly |
+| `TODO-PT-VALIDATE-02` | `_StudentForm.cshtml` — validation elements | Useful field messages display |
 
 The student repository must contain hints and incomplete behavior only. Do not copy this repository's Git directory, branches, tags, commits, backup files, or completed handlers into it.
 
