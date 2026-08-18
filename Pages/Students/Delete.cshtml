@@ -1,0 +1,27 @@
+@page "{id:int}"
+@model SimpleSIS.Pages.Students.DeleteModel
+@{
+    ViewData["Title"] = "Delete Student";
+}
+
+<h1>Delete Student</h1>
+<p class="lead">Are you sure you want to delete this student?</p>
+
+<dl class="row">
+    <dt class="col-sm-3">Student Number</dt>
+    <dd class="col-sm-9">@Model.Student.StudentNumber</dd>
+    <dt class="col-sm-3">Full Name</dt>
+    <dd class="col-sm-9">@Model.Student.FullName</dd>
+    <dt class="col-sm-3">Grade Level</dt>
+    <dd class="col-sm-9">@Model.Student.GradeLevel</dd>
+    <dt class="col-sm-3">Section</dt>
+    <dd class="col-sm-9">@Model.Student.Section</dd>
+    <dt class="col-sm-3">Strand</dt>
+    <dd class="col-sm-9">@Model.Student.Strand</dd>
+</dl>
+
+<form method="post">
+    <input type="hidden" asp-for="Student.Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a class="btn btn-secondary" asp-page="Index">Cancel</a>
+</form>

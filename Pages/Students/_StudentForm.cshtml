@@ -1,0 +1,29 @@
+@model SimpleSIS.Models.Student
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<div class="mb-3">
+    <label asp-for="StudentNumber" class="form-label"></label>
+    <input asp-for="StudentNumber" class="form-control" />
+    <span asp-validation-for="StudentNumber" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="FullName" class="form-label"></label>
+    <input asp-for="FullName" class="form-control" />
+    <span asp-validation-for="FullName" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="GradeLevel" class="form-label"></label>
+    <input asp-for="GradeLevel" class="form-control" />
+    <span asp-validation-for="GradeLevel" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Section" class="form-label"></label>
+    <input asp-for="Section" class="form-control" />
+    <span asp-validation-for="Section" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Strand" class="form-label"></label>
+    <input asp-for="Strand" class="form-control" />
+    <span asp-validation-for="Strand" class="text-danger"></span>
+</div>

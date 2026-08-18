@@ -1,0 +1,46 @@
+@page
+@model SimpleSIS.Pages.Students.IndexModel
+@{
+    ViewData["Title"] = "Students";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Students</h1>
+    <a class="btn btn-primary" asp-page="Create">Add Student</a>
+</div>
+
+@if (Model.Students.Count == 0)
+{
+    <p>No students have been added yet.</p>
+}
+else
+{
+    <table class="table table-striped align-middle">
+        <thead>
+            <tr>
+                <th>Student Number</th>
+                <th>Full Name</th>
+                <th>Grade Level</th>
+                <th>Section</th>
+                <th>Strand</th>
+                <th><span class="visually-hidden">Actions</span></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var student in Model.Students)
+        {
+            <tr>
+                <td>@student.StudentNumber</td>
+                <td>@student.FullName</td>
+                <td>@student.GradeLevel</td>
+                <td>@student.Section</td>
+                <td>@student.Strand</td>
+                <td class="text-nowrap text-end">
+                    <a class="btn btn-sm btn-outline-primary" asp-page="Edit" asp-route-id="@student.Id">Edit</a>
+                    <a class="btn btn-sm btn-outline-danger" asp-page="Delete" asp-route-id="@student.Id">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

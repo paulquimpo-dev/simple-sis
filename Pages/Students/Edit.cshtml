@@ -1,0 +1,18 @@
+@page "{id:int}"
+@model SimpleSIS.Pages.Students.EditModel
+@{
+    ViewData["Title"] = "Edit Student";
+}
+
+<h1>Edit Student</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Student.Id" />
+    <partial name="_StudentForm" for="Student" />
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a class="btn btn-secondary" asp-page="Index">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

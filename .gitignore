@@ -1,0 +1,10 @@
+bin/
+obj/
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Local PostgreSQL credentials must never be committed.
+appsettings.Development.json
+
