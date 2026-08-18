@@ -1,0 +1,356 @@
+# SimpleSIS Living Project Blueprint
+
+**Document role:** Repository-specific source of truth and change record  
+**Project:** SimpleSIS  
+**Repository:** `https://github.com/paulquimpo-dev/simple-sis`  
+**Authoritative implementation branch:** `main`  
+**Document version:** 1.0  
+**Last updated:** August 18, 2026  
+**Current implementation baseline:** commit `eb446ce`
+
+## 1. Purpose
+
+This living blueprint tracks the actual SimpleSIS implementation as it is built, tested, revised, and approved. It records project-specific decisions and changes that may be more detailed than, or not yet reflected in, the Term 1 Second-Half Master Blueprint.
+
+This document will later provide the implementation evidence needed to align three downstream bodies of work:
+
+1. the Performance Task sections of the master teaching blueprint;
+2. the future `portfolio` branch of this repository; and
+3. the independent `simple-sis-student-pt` student repository.
+
+This file must be updated whenever a material SimpleSIS behavior, dependency, schema rule, page, test, repository decision, or downstream requirement changes.
+
+## 2. Source-of-truth hierarchy
+
+Use the following order when making SimpleSIS implementation decisions:
+
+1. The teacher's latest explicit project decision.
+2. The code, migration, and verified behavior on `SimpleSIS/main`.
+3. This living SimpleSIS blueprint.
+4. The v16.2 Term 1 Second-Half Master Blueprint.
+5. Older planning documents and historical blueprint versions.
+
+The curriculum master blueprint remains authoritative for teaching goals, assessment boundaries, and pedagogy. This file controls the concrete SimpleSIS implementation record. If the two documents conflict, record the conflict in Section 13 before changing either document.
+
+## 3. Repository model
+
+```text
+SimpleSIS repository
+├── main
+│   └── Complete, simple Teacher/PT Reference
+└── portfolio
+    └── Future portfolio enhancements created only after main approval
+
+Separate future repository
+└── simple-sis-student-pt
+    └── Student scaffold with clean, independent Git history
+```
+
+### `main` rules
+
+- Remains the authoritative teacher/PT reference.
+- Must be complete, readable, and suitable for Grade 12 instruction.
+- Must remain intentionally small and aligned with the assessed concepts.
+- Must not acquire portfolio-only features or unnecessary architecture.
+
+### `portfolio` rules
+
+- Do not create or develop it until `main` is complete, stabilized, tested, documented, and explicitly approved.
+- Branch it from the approved `main` baseline.
+- Track every enhancement and its relationship to the reference implementation in this document before or with its implementation.
+
+### Student-repository rules
+
+- Repository name: `simple-sis-student-pt`.
+- It must represent the same application contract and project structure as the approved teacher version.
+- It must be created independently from the specification with clean Git history.
+- Never copy the teacher repository's `.git` directory, commits, branches, tags, patches, backups, commented answers, or hidden solutions.
+- Student TODOs must map to the completed teacher implementation and observable tests documented here.
+
+## 4. Product scope
+
+SimpleSIS is an ASP.NET Core Razor Pages web application demonstrating one-entity Student CRUD with real PostgreSQL persistence.
+
+### Required features
+
+- Home page and Students navigation
+- Student list (READ)
+- Add Student (CREATE)
+- Edit Student (UPDATE)
+- Delete Student with a separate confirmation step (DELETE)
+- Server-side and client-side validation feedback
+- PostgreSQL persistence across application restarts
+- Deterministic fictional seed data
+- Safe local credential configuration
+
+### Explicitly excluded from `main`
+
+- Authentication, authorization, roles, or user accounts
+- APIs or JavaScript-heavy SPA frameworks
+- Repository pattern, service layer, CQRS, MediatR, or AutoMapper
+- Docker or cloud deployment requirements
+- Dashboard analytics, search, filtering, or pagination
+- Enrollment, attendance, grades, subjects, schedules, or LMS features
+- Student Number uniqueness unless later explicitly taught and approved
+
+Items such as dashboard improvements, search/filtering, pagination, screenshots, and significant UI/UX enhancement are possible `portfolio` candidates, not current `main` requirements.
+
+## 5. Fixed technical baseline
+
+| Component | Current decision |
+| --- | --- |
+| Application type | ASP.NET Core Razor Pages web app |
+| Project/assembly | `SimpleSIS` |
+| Target framework | `.NET 9` / `net9.0` |
+| EF Core design package | `Microsoft.EntityFrameworkCore.Design` 9.0.18 |
+| PostgreSQL EF provider | `Npgsql.EntityFrameworkCore.PostgreSQL` 9.0.4 |
+| Local EF tool | `dotnet-ef` 9.0.18 |
+| Database | PostgreSQL |
+| Default local database | `student_sis` |
+| UI baseline | Default Razor Pages Bootstrap assets |
+| Handler style | Direct, synchronous, beginner-readable EF Core |
+
+Do not silently upgrade the target framework or package major versions. Any version change requires classroom-environment verification, migration review, a completed regression matrix, and an entry in Sections 12 and 14.
+
+## 6. Student entity contract
+
+```text
+Student
+├── Id             int     primary key
+├── StudentNumber  string  required
+├── FullName       string  required
+├── GradeLevel     int     required; inclusive range 7–12
+├── Section        string  required
+└── Strand         string  required
+```
+
+Current validation messages:
+
+- `Student Number is required.`
+- `Full Name is required.`
+- `Grade Level must be from 7 to 12.`
+- `Section is required.`
+- `Strand is required.`
+
+`Email` is not part of the contract. `StudentNumber` does not have a unique database index in the reference implementation.
+
+## 7. Persistence and seed baseline
+
+Required architecture:
+
+```text
+Browser
+  → Razor Page
+  → PageModel
+  → AppDbContext / EF Core
+  → Npgsql
+  → PostgreSQL
+```
+
+The provided `InitialCreate` migration creates the `Students` table and inserts two deterministic fictional records:
+
+| Student Number | Full Name | Grade | Section | Strand |
+| --- | --- | ---: | --- | --- |
+| 2026-001 | Juan Dela Cruz | 12 | St. Paul | ICT |
+| 2026-002 | Maria Santos | 12 | St. Paul | ICT |
+
+Students apply the provided migration using `dotnet ef database update`. They do not design the schema, write raw SQL, create `AppDbContext`, configure Npgsql, or author the initial migration.
+
+## 8. Current implementation map
+
+| Responsibility | File |
+| --- | --- |
+| Package and framework pins | `SimpleSIS.csproj` |
+| Local EF tool pin | `.config/dotnet-tools.json` |
+| PostgreSQL registration | `Program.cs` |
+| Student entity and validation | `Models/Student.cs` |
+| DbContext and seed configuration | `Data/AppDbContext.cs` |
+| Provided database schema | `Migrations/` |
+| READ | `Pages/Students/Index.cshtml` and `.cshtml.cs` |
+| CREATE | `Pages/Students/Create.cshtml` and `.cshtml.cs` |
+| UPDATE | `Pages/Students/Edit.cshtml` and `.cshtml.cs` |
+| DELETE | `Pages/Students/Delete.cshtml` and `.cshtml.cs` |
+| Shared Student form | `Pages/Students/_StudentForm.cshtml` |
+| Main navigation | `Pages/Shared/_Layout.cshtml` |
+| Safe credential example | `appsettings.Development.example.json` |
+| Teacher setup overview | `README.md` |
+| Teacher assessment guidance | `docs/TEACHER_GUIDE.md` |
+
+### CRUD behavior
+
+- READ uses `context.Students.ToList()`.
+- CREATE checks `ModelState.IsValid`, calls `Add` and `SaveChanges`, then redirects to the list.
+- UPDATE loads the stored entity with `Find`, copies the five permitted fields, calls `SaveChanges`, then redirects.
+- DELETE GET loads and displays the selected Student without deleting it.
+- DELETE POST loads the record with `Find`, calls `Remove` and `SaveChanges`, then redirects.
+- Missing IDs return HTTP 404 through `NotFound()`.
+
+## 9. Safe configuration workflow
+
+The committed repository contains only `appsettings.Development.example.json` with a placeholder connection string. The real `appsettings.Development.json` is ignored by Git.
+
+Standard setup:
+
+```powershell
+dotnet restore
+dotnet tool restore
+# Copy the development settings example and enter local PostgreSQL values.
+dotnet ef database update
+dotnet run
+```
+
+Never place a real password in this document, source code, committed settings, test output, patch, issue, or screenshot.
+
+## 10. Required regression matrix
+
+Run this matrix after every material CRUD, model, validation, migration, package, or configuration change.
+
+- [x] Application builds with zero warnings.
+- [x] Application starts as a browser-based Razor Pages web app.
+- [x] Provided migration applies to PostgreSQL.
+- [x] READ displays both seed records.
+- [x] CREATE accepts a valid Student.
+- [x] Restart: the created Student remains.
+- [x] UPDATE loads the selected Student and saves changes.
+- [x] Restart: the update remains.
+- [x] Opening DELETE confirmation does not delete the Student.
+- [x] Confirmed DELETE removes the Student.
+- [x] Restart: the deleted Student remains absent.
+- [x] Empty StudentNumber is rejected.
+- [x] Empty FullName is rejected.
+- [x] GradeLevel below 7 or above 12 is rejected.
+- [x] Empty Section is rejected.
+- [x] Empty Strand is rejected.
+- [x] Invalid submissions are not saved.
+- [x] Real credentials are absent from committed files.
+- [x] Local credential settings and generated build folders are ignored.
+- [x] EF migration snapshot matches the current model.
+
+Last complete matrix run: August 18, 2026, against local PostgreSQL 18.
+
+## 11. Current progress and readiness
+
+| Phase | Status | Evidence |
+| --- | --- | --- |
+| Git repository and `main` | Complete | GitHub remote and tracked `main` baseline |
+| Razor Pages baseline | Complete | Build and browser startup verified |
+| EF Core/Npgsql setup | Complete | Pinned packages and local tool manifest |
+| Student model/validation | Complete | Model attributes and invalid-form tests |
+| Migration and seed data | Complete | Migration applied; both seeds verified |
+| READ | Complete | Seed list verified through HTTP |
+| CREATE | Complete | Save and restart persistence verified |
+| UPDATE | Complete | Save and restart persistence verified |
+| DELETE | Complete | Confirmation and restart absence verified |
+| Documentation | Complete baseline | README and teacher guide present |
+| Final teacher review/approval | Pending | Teacher confirmation required |
+| `portfolio` branch | Not started | Intentionally deferred |
+| `simple-sis-student-pt` | Not started | Intentionally deferred |
+
+## 12. Decision log
+
+| Date | Decision | Reason and impact |
+| --- | --- | --- |
+| 2026-08-18 | Use `SimpleSIS/main` as the teacher/PT reference. | Keeps the instructional answer implementation authoritative and simple. |
+| 2026-08-18 | Reserve `portfolio` for later enhancements. | Prevents portfolio work from changing the assessed reference baseline. |
+| 2026-08-18 | Create `simple-sis-student-pt` independently only after teacher approval. | Prevents solution leakage while preserving application alignment. |
+| 2026-08-18 | Target .NET 9 and pin EF/tool versions. | Matches the verified development environment and avoids accidental upgrades. |
+| 2026-08-18 | Use PostgreSQL through Npgsql only. | Meets the PT's real-persistence requirement. |
+| 2026-08-18 | Validate GradeLevel from 7 through 12. | Resolves the range left open in earlier planning text. |
+| 2026-08-18 | Prefer synchronous direct EF Core handlers. | Avoids making `async`/`await` or architectural abstractions hidden prerequisites. |
+| 2026-08-18 | Share Student form markup through `_StudentForm.cshtml`. | Keeps Create/Edit consistent while remaining easy to explain. |
+
+## 13. Open decisions and alignment issues
+
+- Obtain explicit teacher approval that the current `main` implementation is the final PT reference baseline.
+- Decide whether the unused default Privacy page should remain as harmless template content or be removed before freezing `main`.
+- Before creating `portfolio`, define exactly which enhancements belong there and which must remain absent from the student PT.
+- Before generating the student repository, finalize the TODO distribution, checklist, rubric mapping, and expected amount of student-written validation work.
+- After `main` approval, compare this document against the master blueprint and update only the PT sections affected by the completed implementation.
+
+## 14. Change log
+
+Every material project revision must add an entry. Use one row per cohesive change and reference the related commit after it exists.
+
+| Date | Blueprint version | Branch/commit | Change | Tests rerun | Downstream impact |
+| --- | --- | --- | --- | --- | --- |
+| 2026-08-18 | 1.0 | `main` / `eb446ce` | Recorded the completed teacher-reference baseline, exact technical choices, CRUD behavior, persistence evidence, and downstream repository rules. | Full matrix already passed | Establishes alignment source for master PT, portfolio, and student scaffold |
+
+### Required entry format for future changes
+
+```text
+Date:
+Blueprint version:
+Branch/commit:
+Change:
+Reason:
+Files affected:
+Tests rerun and results:
+Database/migration impact:
+Student scaffold impact:
+Portfolio impact:
+Master blueprint impact:
+```
+
+## 15. Workflow for every future SimpleSIS revision
+
+1. Record the proposed change and reason in Section 13 or the decision log.
+2. Confirm whether it belongs on `main` or only on the future `portfolio` branch.
+3. Implement the smallest beginner-readable change.
+4. Update model/migration documentation when persistence changes.
+5. Run the proportionate regression tests; run the complete matrix for material changes.
+6. Update the implementation map, progress table, decisions, and change log in this file.
+7. Commit the code and this blueprint together when they describe the same revision.
+8. Record downstream effects on the master PT, portfolio plan, and student scaffold.
+
+## 16. Main-completion alignment procedure
+
+After the teacher declares `SimpleSIS/main` complete:
+
+### Update the master blueprint
+
+- Compare its PT entity, validation, packages, repository names, setup, migration, seed, page structure, CRUD behavior, and test matrix against this file.
+- Replace outdated choices with the approved implementation baseline.
+- Preserve curriculum and pedagogy that are not changed by implementation evidence.
+
+### Plan the `portfolio` branch
+
+- Branch from the exact approved `main` commit.
+- List each enhancement and confirm it is portfolio-only.
+- Keep the core Student contract and PostgreSQL behavior compatible unless an intentional portfolio migration is documented.
+- Track portfolio-specific tests and screenshots without weakening the reference branch.
+
+### Generate `simple-sis-student-pt`
+
+- Build it independently from this specification and the approved master PT plan.
+- Match the teacher version's target framework, packages, Student contract, migration, seed records, filenames, and expected outputs.
+- Replace only approved student work areas with stable TODO IDs and conceptual hints.
+- Ensure incomplete tasks cause incomplete behavior rather than unrelated build failures when practical.
+- Clean-clone and follow the student README exactly.
+- Audit every commit, branch, tag, file, comment, patch, backup, and generated artifact for solution leakage.
+- Confirm TODO IDs map to the teacher guide, checklist, rubric, checkpoints, and observable tests.
+
+## 17. Completion gates
+
+### Freeze `main` only when
+
+- [ ] Teacher explicitly approves the implementation.
+- [x] Full CRUD/validation/persistence matrix passes.
+- [x] Documentation matches code and migration.
+- [x] No real credentials are committed.
+- [x] Scope remains Grade-12 appropriate.
+- [ ] All open `main` decisions in Section 13 are resolved or deliberately deferred.
+
+### Begin `portfolio` only when
+
+- [ ] `main` is frozen at a recorded commit.
+- [ ] Portfolio goals and exclusions are documented.
+- [ ] The branch is created from that exact baseline.
+
+### Publish the student repository only when
+
+- [ ] The approved teacher baseline is recorded.
+- [ ] Student TODO/checklist/rubric mapping is complete.
+- [ ] Clean-clone setup and starter behavior pass.
+- [ ] Migration and seed READ behavior pass.
+- [ ] Git-history and file-content leakage audits pass.
+- [ ] Teacher performs a final student-view review.

@@ -67,6 +67,8 @@ Pages/Students/_StudentForm   Shared form fields and validation feedback
 Program.cs                    Razor Pages and PostgreSQL registration
 ```
 
+See [docs/SIMPLESIS_PROJECT_BLUEPRINT.md](docs/SIMPLESIS_PROJECT_BLUEPRINT.md) for the living implementation record, decisions, progress, revisions, and downstream alignment plan.
+
 See [docs/TEACHER_GUIDE.md](docs/TEACHER_GUIDE.md) for checking, persistence tests, planned student TODO mapping, and reset guidance.
 
 ## Scope
