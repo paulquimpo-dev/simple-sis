@@ -4,9 +4,9 @@
 **Project:** SimpleSIS  
 **Repository:** `https://github.com/paulquimpo-dev/simple-sis`  
 **Authoritative implementation branch:** `main`  
-**Document version:** 1.5
+**Document version:** 1.6
 **Last updated:** August 18, 2026  
-**Current implementation baseline:** commit `6dd3422`
+**Current implementation baseline:** commit `1f0e136`
 
 ## 1. Purpose
 
@@ -282,6 +282,7 @@ Every material project revision must add an entry. Use one row per cohesive chan
 | 2026-08-18 | 1.3 | Student remote commit `2ab19e7` | Added `GUIDED_LAB.md` and linked it from the student README. The lab covers setup, CRUD, validation, restart persistence, troubleshooting, reflection, and optional challenges without completed handler code. | Zero-warning build; all 11 code TODO IDs represented; local links verified; completed-handler leakage pattern scan passed | Student instructions now support a structured lab sequence while retaining assessed challenge |
 | 2026-08-18 | 1.4 | Student remote commit `ecf5813` | Separated repository/environment setup from implementation work: README owns clone through first run; the guided lab begins at READ and continues through final testing. | Zero-warning build; all 11 code TODO IDs remain aligned; documentation links verified | Removes duplicated instructions and clearly distinguishes guided prerequisites from assessed completion work |
 | 2026-08-18 | 1.5 | Student remote commit `82c9d85`; coordinated teacher/master revision | Reframed the student guide as five dated Guided PT Labs plus a Final PT Completion Lab and aligned the master calendar, teacher checkpoints, assessment policy, remediation, demonstrations, and submission sequence. | Five-pass cross-artifact audit passed; teacher/student builds zero warnings | Guided labs now cumulatively produce the PT without duplicating unrelated formal laboratory products |
+| 2026-08-18 | 1.6 | Student remote commit `0d8d819`; coordinated teacher/master documentation revision | Moved completion of the four missing shared form controls from the later Validation lab to CREATE as `TODO-PT-CREATE-03`; Validation retains message rendering and invalid-input proof as `TODO-PT-VALIDATE-02`. | Teacher and student builds: zero warnings/errors; browser CRUD, five-message server validation, 404 handling, and create/update/delete restart persistence passed | Students can now complete and test CREATE in scheduled order without skipping ahead to Lab 5 |
 
 ### Required entry format for future changes
 
@@ -377,4 +378,4 @@ Completed August 18, 2026, before publishing blueprint version 1.5.
 | 4 | Teacher/student builds, migration consistency, repository separation, credential safety, teacher-file leakage, backup/patch leakage, and solution statements in student guidance | Passed after placing repositories in independent directories; both builds produce zero warnings |
 | 5 | README-versus-guide responsibility, technical pins, entity contract, dates, links, terminology, and final Git diffs | Passed after audit-path trust and whitespace cleanup |
 
-Audit conclusion: README owns clone through first run; five scheduled Guided PT Labs cumulatively build the application; the Final PT Completion Lab establishes integrated functional readiness; remediation, individual demonstration, and submission complete the PT assessment.
+Audit conclusion: README owns clone through first run; five scheduled Guided PT Labs cumulatively build the application; the Final PT Completion Lab establishes integrated functional readiness; remediation, individual demonstration, and submission complete the PT assessment. A subsequent student-view rehearsal found and corrected one ordering defect: the complete form is now built during CREATE, before its required persistence checkpoint.
