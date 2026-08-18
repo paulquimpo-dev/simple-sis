@@ -4,7 +4,7 @@
 **Project:** SimpleSIS  
 **Repository:** `https://github.com/paulquimpo-dev/simple-sis`  
 **Authoritative implementation branch:** `main`  
-**Document version:** 1.8
+**Document version:** 1.9
 **Last updated:** August 18, 2026  
 **Current implementation baseline:** commit `1f0e136`
 
@@ -285,6 +285,7 @@ Every material project revision must add an entry. Use one row per cohesive chan
 | 2026-08-18 | 1.6 | Student remote commit `0d8d819`; coordinated teacher/master documentation revision | Moved completion of the four missing shared form controls from the later Validation lab to CREATE as `TODO-PT-CREATE-03`; Validation retains message rendering and invalid-input proof as `TODO-PT-VALIDATE-02`. | Teacher and student builds: zero warnings/errors; browser CRUD, five-message server validation, 404 handling, and create/update/delete restart persistence passed | Students can now complete and test CREATE in scheduled order without skipping ahead to Lab 5 |
 | 2026-08-18 | 1.7 | Student remote commit `d1d0433`; coordinated teacher/master documentation revision | Converted the earlier guided practice into three named prerequisite individual laboratories on August 20, August 26, and September 2; named September 1 Guided PT Lab 0 setup; preserved September 7–10 as cumulative CRUD implementation. | Five-pass laboratory-pathway audit passed; both projects build with zero warnings/errors | Students now have a continuous hands-on laboratory pathway before formal PT coding without being asked to use untaught CRUD concepts |
 | 2026-08-18 | 1.8 | Student remote commit `8118d60`; coordinated teacher/master documentation revision | Replaced fixed laboratory assumptions with primary targets, readiness gates, and recovery windows; recorded the announced August 19 suspension and protected students from forced home-PC catch-up. | Suspension-path terminology, links, TODO boundaries, and both zero-warning/error builds passed | Missed classes roll forward without skipping theory, losing lab eligibility, or destabilizing later PT checkpoints |
+| 2026-08-18 | 1.9 | Student remote commit `5ca3ed7`; coordinated teacher/master documentation revision | Expanded both repository root READMEs from brief setup notes into complete clean-clone, project restore/build, PostgreSQL database preparation, private connection-string, provided migration, first-run verification, and troubleshooting guides. | Both projects build with zero warnings/errors; ignored-settings, placeholder-only credential, link, command, and solution-leakage checks passed | Setup and database instructions are now available immediately on each repository landing page |
 
 ### Required entry format for future changes
 
