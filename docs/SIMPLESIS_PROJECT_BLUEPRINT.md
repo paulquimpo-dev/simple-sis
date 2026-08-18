@@ -4,7 +4,7 @@
 **Project:** SimpleSIS  
 **Repository:** `https://github.com/paulquimpo-dev/simple-sis`  
 **Authoritative implementation branch:** `main`  
-**Document version:** 1.4  
+**Document version:** 1.5
 **Last updated:** August 18, 2026  
 **Current implementation baseline:** commit `6dd3422`
 
@@ -261,6 +261,8 @@ Last complete matrix run: August 18, 2026, against local PostgreSQL 18.
 | 2026-08-18 | Freeze the current `main` behavior as the student-scaffold baseline before portfolio work. | Ensures students receive the same architecture and expected output as the completed teacher reference. |
 | 2026-08-18 | Use stable TODO IDs across READ, CREATE, UPDATE, DELETE, and validation. | Makes checkpoints, teacher answers, tests, and rubric categories traceable. |
 | 2026-08-18 | Provide a progressive guided lab without completed solution statements. | Gives beginners enough structure to proceed while preserving reasoning, implementation, persistence, and explanation challenges. |
+| 2026-08-18 | Make the repository Guided Lab the cumulative formal PT laboratory sequence. | Eliminates unrelated lab products: READ is scheduled September 7, CREATE September 8, UPDATE/DELETE/Validation September 9, and final integration September 10. |
+| 2026-08-18 | Require a Final PT Completion Lab after the five individual labs. | Completing component labs builds the application, while integration, persistence, testing, teacher checking, demonstration, and submission establish final PT completion. |
 
 ## 13. Open decisions and alignment issues
 
@@ -279,6 +281,7 @@ Every material project revision must add an entry. Use one row per cohesive chan
 | 2026-08-18 | 1.2 | Student remote `paulquimpo-dev/simple-sis-student-pt` / `f315fd7` | Published the student repository and audited a fresh remote clone. | One commit, one source branch, zero tags, 28 tracked TODO references, no teacher guide/living blueprint, restore and build with zero warnings | Student scaffold is technically ready for teacher student-view review |
 | 2026-08-18 | 1.3 | Student remote commit `2ab19e7` | Added `GUIDED_LAB.md` and linked it from the student README. The lab covers setup, CRUD, validation, restart persistence, troubleshooting, reflection, and optional challenges without completed handler code. | Zero-warning build; all 11 code TODO IDs represented; local links verified; completed-handler leakage pattern scan passed | Student instructions now support a structured lab sequence while retaining assessed challenge |
 | 2026-08-18 | 1.4 | Student remote commit `ecf5813` | Separated repository/environment setup from implementation work: README owns clone through first run; the guided lab begins at READ and continues through final testing. | Zero-warning build; all 11 code TODO IDs remain aligned; documentation links verified | Removes duplicated instructions and clearly distinguishes guided prerequisites from assessed completion work |
+| 2026-08-18 | 1.5 | Student remote commit `82c9d85`; coordinated teacher/master revision | Reframed the student guide as five dated Guided PT Labs plus a Final PT Completion Lab and aligned the master calendar, teacher checkpoints, assessment policy, remediation, demonstrations, and submission sequence. | Five-pass cross-artifact audit passed; teacher/student builds zero warnings | Guided labs now cumulatively produce the PT without duplicating unrelated formal laboratory products |
 
 ### Required entry format for future changes
 
@@ -356,7 +359,22 @@ After the teacher declares `SimpleSIS/main` complete:
 - [x] The approved teacher baseline is recorded.
 - [x] Student TODO/checklist/rubric mapping is complete.
 - [x] Guided lab stages and challenge checkpoints align with every code TODO ID.
+- [x] Guided lab dates align with the master September 7–10 development schedule.
 - [x] Remote clean-clone restore and zero-warning build pass.
 - [x] Provided migration compatibility and seed infrastructure pass.
 - [x] Local Git-history and file-content leakage audits pass.
 - [ ] Teacher performs a final student-view review before classroom distribution.
+
+## 18. Five-pass cumulative-PT alignment audit
+
+Completed August 18, 2026, before publishing blueprint version 1.5.
+
+| Pass | Focus | Result |
+| --- | --- | --- |
+| 1 | Dates, sequence, and exact lab names across master calendar, README, Guided Lab, checklist, and teacher guide | Passed after standardizing README names to `Guided PT Lab 1–5` |
+| 2 | Exact traceability of all code TODO IDs through Guided Lab, checklist, teacher answer map, and master blueprint | Passed: all 11 IDs match and each assigned code marker is unique |
+| 3 | Assessment semantics, obsolete standalone labs, implementation start date, cumulative-credit policy, and duplicate grading prevention | Passed: old Course Information/Feedback formal products and September 8-only start conflict removed |
+| 4 | Teacher/student builds, migration consistency, repository separation, credential safety, teacher-file leakage, backup/patch leakage, and solution statements in student guidance | Passed after placing repositories in independent directories; both builds produce zero warnings |
+| 5 | README-versus-guide responsibility, technical pins, entity contract, dates, links, terminology, and final Git diffs | Passed after audit-path trust and whitespace cleanup |
+
+Audit conclusion: README owns clone through first run; five scheduled Guided PT Labs cumulatively build the application; the Final PT Completion Lab establishes integrated functional readiness; remediation, individual demonstration, and submission complete the PT assessment.

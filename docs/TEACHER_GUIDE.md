@@ -51,7 +51,24 @@ The student repository separates setup from assessed implementation:
 READ → CREATE → UPDATE → DELETE → Validation → Final Testing
 ```
 
-Each stage provides goals, concept reminders, TODO locations, guided tasks, non-solution hints, observable checkpoints, reasoning challenges, and troubleshooting. The guide names the required EF Core operations conceptually but does not include completed handler statements. Students should follow the guided lab first and use `PT_CHECKLIST.md` as the concise completion and scoring reference.
+Each lab provides goals, concept reminders, TODO locations, guided tasks, non-solution hints, observable checkpoints, reasoning challenges, and troubleshooting. The guide names the required EF Core operations conceptually but does not include completed handler statements. Students should follow the guided lab first and use `PT_CHECKLIST.md` as the concise completion and scoring reference.
+
+### Cumulative PT laboratory schedule
+
+| Date | Guided laboratory | Prerequisite | Teacher sign-off evidence |
+| --- | --- | --- | --- |
+| September 1 | README orientation/setup | Project/database orientation | Restore, migration, startup |
+| September 7 | Guided PT Lab 1 — READ | Razor properties, collections, `foreach` | Seeds and five columns display |
+| September 8 | Guided PT Lab 2 — CREATE | Forms, GET/POST, binding | Valid create persists after restart |
+| September 9 | Guided PT Lab 3 — UPDATE | UPDATE and persistence pattern | Edited values persist after restart |
+| September 9 | Guided PT Lab 4 — DELETE | Confirmation and POST behavior | Confirmation is safe; deletion persists |
+| September 9 | Guided PT Lab 5 — Validation | Attributes, messages, `ModelState` | Invalid input is rejected and not saved |
+| September 10 | Final PT Completion Lab | All earlier checkpoints | Full integrated matrix and first formal check |
+| September 14 | Remediation and clean retest | Written repair list | Readiness recheck |
+| September 15–16 | Individual demonstrations | Functionally complete PT | Behavior and code explanation |
+| September 17 | Final submission | Demonstration and source cleanup | Teacher-approved source submission |
+
+The five labs produce the PT incrementally. Do not award a second full product grade for the same behavior. Use lab checkpoints as progress/formative evidence or as the corresponding PT rubric evidence; the final PT grade also requires integration, persistence, testing, demonstration, and submission.
 
 ## Required test matrix
 
