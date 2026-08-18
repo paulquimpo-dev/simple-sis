@@ -42,10 +42,13 @@ The student repository must contain hints and incomplete behavior only. Do not c
 
 ## Student guided lab
 
-The student repository includes `GUIDED_LAB.md`, a progressive laboratory guide organized as:
+The student repository separates setup from assessed implementation:
+
+- `README.md` covers cloning/downloading, prerequisites, safe PostgreSQL configuration, the provided migration, first run, and setup troubleshooting.
+- `GUIDED_LAB.md` begins only after setup succeeds and is organized as:
 
 ```text
-Setup → READ → CREATE → UPDATE → DELETE → Validation → Final Testing
+READ → CREATE → UPDATE → DELETE → Validation → Final Testing
 ```
 
 Each stage provides goals, concept reminders, TODO locations, guided tasks, non-solution hints, observable checkpoints, reasoning challenges, and troubleshooting. The guide names the required EF Core operations conceptually but does not include completed handler statements. Students should follow the guided lab first and use `PT_CHECKLIST.md` as the concise completion and scoring reference.

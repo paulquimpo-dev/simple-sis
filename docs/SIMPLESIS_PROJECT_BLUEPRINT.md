@@ -4,7 +4,7 @@
 **Project:** SimpleSIS  
 **Repository:** `https://github.com/paulquimpo-dev/simple-sis`  
 **Authoritative implementation branch:** `main`  
-**Document version:** 1.3  
+**Document version:** 1.4  
 **Last updated:** August 18, 2026  
 **Current implementation baseline:** commit `6dd3422`
 
@@ -278,6 +278,7 @@ Every material project revision must add an entry. Use one row per cohesive chan
 | 2026-08-18 | 1.1 | Student scaffold `f315fd7`; related teacher documentation update | Created the independent student scaffold with provided infrastructure, stable TODO gaps, student README/checklist/rubric, one clean commit, and no teacher Git history. | Restore/build zero warnings; migration compatibility; starter HTTP startup; TODO and leakage audits | Student repository is ready for GitHub publication and remote clean-clone verification |
 | 2026-08-18 | 1.2 | Student remote `paulquimpo-dev/simple-sis-student-pt` / `f315fd7` | Published the student repository and audited a fresh remote clone. | One commit, one source branch, zero tags, 28 tracked TODO references, no teacher guide/living blueprint, restore and build with zero warnings | Student scaffold is technically ready for teacher student-view review |
 | 2026-08-18 | 1.3 | Student remote commit `2ab19e7` | Added `GUIDED_LAB.md` and linked it from the student README. The lab covers setup, CRUD, validation, restart persistence, troubleshooting, reflection, and optional challenges without completed handler code. | Zero-warning build; all 11 code TODO IDs represented; local links verified; completed-handler leakage pattern scan passed | Student instructions now support a structured lab sequence while retaining assessed challenge |
+| 2026-08-18 | 1.4 | Student remote commit `ecf5813` | Separated repository/environment setup from implementation work: README owns clone through first run; the guided lab begins at READ and continues through final testing. | Zero-warning build; all 11 code TODO IDs remain aligned; documentation links verified | Removes duplicated instructions and clearly distinguishes guided prerequisites from assessed completion work |
 
 ### Required entry format for future changes
 
