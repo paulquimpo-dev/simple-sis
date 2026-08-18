@@ -4,7 +4,7 @@
 **Project:** SimpleSIS  
 **Repository:** `https://github.com/paulquimpo-dev/simple-sis`  
 **Authoritative implementation branch:** `main`  
-**Document version:** 1.7
+**Document version:** 1.8
 **Last updated:** August 18, 2026  
 **Current implementation baseline:** commit `1f0e136`
 
@@ -284,6 +284,7 @@ Every material project revision must add an entry. Use one row per cohesive chan
 | 2026-08-18 | 1.5 | Student remote commit `82c9d85`; coordinated teacher/master revision | Reframed the student guide as five dated Guided PT Labs plus a Final PT Completion Lab and aligned the master calendar, teacher checkpoints, assessment policy, remediation, demonstrations, and submission sequence. | Five-pass cross-artifact audit passed; teacher/student builds zero warnings | Guided labs now cumulatively produce the PT without duplicating unrelated formal laboratory products |
 | 2026-08-18 | 1.6 | Student remote commit `0d8d819`; coordinated teacher/master documentation revision | Moved completion of the four missing shared form controls from the later Validation lab to CREATE as `TODO-PT-CREATE-03`; Validation retains message rendering and invalid-input proof as `TODO-PT-VALIDATE-02`. | Teacher and student builds: zero warnings/errors; browser CRUD, five-message server validation, 404 handling, and create/update/delete restart persistence passed | Students can now complete and test CREATE in scheduled order without skipping ahead to Lab 5 |
 | 2026-08-18 | 1.7 | Student remote commit `d1d0433`; coordinated teacher/master documentation revision | Converted the earlier guided practice into three named prerequisite individual laboratories on August 20, August 26, and September 2; named September 1 Guided PT Lab 0 setup; preserved September 7–10 as cumulative CRUD implementation. | Five-pass laboratory-pathway audit passed; both projects build with zero warnings/errors | Students now have a continuous hands-on laboratory pathway before formal PT coding without being asked to use untaught CRUD concepts |
+| 2026-08-18 | 1.8 | Student remote commit `8118d60`; coordinated teacher/master documentation revision | Replaced fixed laboratory assumptions with primary targets, readiness gates, and recovery windows; recorded the announced August 19 suspension and protected students from forced home-PC catch-up. | Suspension-path terminology, links, TODO boundaries, and both zero-warning/error builds passed | Missed classes roll forward without skipping theory, losing lab eligibility, or destabilizing later PT checkpoints |
 
 ### Required entry format for future changes
 
@@ -394,3 +395,9 @@ Completed August 18, 2026, for blueprint version 1.7.
 | 5 | Technical regression | Passed: teacher and student projects build with zero warnings and zero errors |
 
 Audit conclusion: students receive meaningful individual laboratory work before September 7, Guided PT Lab 0 prepares SimpleSIS on September 1, and the cumulative CRUD implementation remains scheduled only after its prerequisite lessons.
+
+## 20. Suspension and recovery rule
+
+Laboratory dates are pacing targets, not unconditional deadlines. A laboratory proceeds only when its prerequisite instruction is complete and equitable school-PC access is available. Suspended or online-only PC blocks move to the documented recovery window or next available in-person block. No student is required to perform PC-dependent catch-up at home merely to protect the calendar.
+
+The August 19, 2026 suspension moves unfinished Lesson 1.2 and Formal Lecture Activity 1 forward. Individual Lab 1 remains possible on August 20 only if the lesson gate, demonstration, time, and PC gate are satisfied; otherwise August 24 is the preferred recovery target.

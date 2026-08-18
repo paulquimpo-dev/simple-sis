@@ -56,12 +56,12 @@ Each lab provides goals, concept reminders, TODO locations, guided tasks, non-so
 
 ### Complete laboratory schedule
 
-| Date | Laboratory | Role | Teacher sign-off evidence |
+| Primary target | Recovery window | Laboratory | Role and sign-off evidence |
 | --- | --- | --- | --- |
-| August 20 | Individual Lab 1 — .NET CLI and Project Structure | Prerequisite practice | Console project restores, builds, runs; files explained |
-| August 26 | Individual Lab 2 — First Razor Pages Web App | Prerequisite practice | Local web app, URL/port, request/response, visible edit |
-| September 1 | Guided PT Lab 0 — SimpleSIS Setup | Environment readiness | Restore, migration, startup |
-| September 2 | Individual Lab 3 — Razor Page and PageModel Flow | Prerequisite practice | `OnGet` property renders through `@Model` |
+| August 20 | Preferably August 24 | Individual Lab 1 — .NET CLI and Project Structure | Prerequisite practice: console project restores, builds, runs; files explained |
+| August 26 | August 27 or next PC block | Individual Lab 2 — First Razor Pages Web App | Prerequisite practice: local web app, URL/port, request/response, visible edit |
+| September 1 | September 2–3 or next PC block | Guided PT Lab 0 — SimpleSIS Setup | Environment readiness: restore, migration, startup |
+| September 2 | September 3 or before PT Lab 1 | Individual Lab 3 — Razor Page and PageModel Flow | Prerequisite practice: `OnGet` property renders through `@Model` |
 | September 7 | Guided PT Lab 1 — READ Students | Cumulative PT | Seeds and five columns display |
 | September 8 | Guided PT Lab 2 — CREATE a Student | Cumulative PT | Valid create persists after restart |
 | September 9 | Guided PT Lab 3 — UPDATE a Student | Cumulative PT | Edited values persist after restart |
@@ -71,6 +71,10 @@ Each lab provides goals, concept reminders, TODO locations, guided tasks, non-so
 | September 14 | Remediation and clean retest | Repair | Readiness recheck |
 | September 15–16 | Individual demonstrations | Authentication of learning | Behavior and code explanation |
 | September 17 | Final submission | Completion | Teacher-approved source submission |
+
+All dates are primary targets. For a suspension, online shift without equitable PC access, unfinished prerequisite, or setup failure, move the affected laboratory to its recovery window or next available in-person PC block. Do not compress theory, skip a checkpoint, or require home-PC coding to preserve the target date.
+
+For the announced August 19 suspension, move Formal Lecture Activity 1 and any unfinished Lesson 1.2 work to the next available teaching block. Conduct Individual Lab 1 on August 20 only if Lessons 1.1–1.4, the CLI demonstration, time, and PC access are all sufficient; otherwise use August 24 as the preferred recovery block.
 
 The three prerequisite labs are formative readiness evidence and use disposable practice projects. The five PT labs produce SimpleSIS incrementally. Do not award duplicate full-product credit for prerequisite exercises or for the same PT behavior; the final PT grade also requires integration, persistence, testing, demonstration, and submission.
 
