@@ -40,10 +40,11 @@ These stable IDs should be used when the separate student scaffold is independen
 
 The student repository must contain hints and incomplete behavior only. Do not copy this repository's Git directory, branches, tags, commits, backup files, or completed handlers into it.
 
-## Student guided lab
+## Student laboratory pathway
 
-The student repository separates setup from assessed implementation:
+The student repository separates prerequisite practice, setup, and assessed PT implementation:
 
+- `PREREQUISITE_LABS.md` defines three separate individual practice laboratories plus Guided PT Lab 0 setup. Practice projects remain outside the SimpleSIS repository and do not reveal CRUD answers.
 - `README.md` covers cloning/downloading, prerequisites, safe PostgreSQL configuration, the provided migration, first run, and setup troubleshooting.
 - `GUIDED_LAB.md` begins only after setup succeeds and is organized as:
 
@@ -53,22 +54,25 @@ READ → CREATE → UPDATE → DELETE → Validation → Final Testing
 
 Each lab provides goals, concept reminders, TODO locations, guided tasks, non-solution hints, observable checkpoints, reasoning challenges, and troubleshooting. The guide names the required EF Core operations conceptually but does not include completed handler statements. Students should follow the guided lab first and use `PT_CHECKLIST.md` as the concise completion and scoring reference.
 
-### Cumulative PT laboratory schedule
+### Complete laboratory schedule
 
-| Date | Guided laboratory | Prerequisite | Teacher sign-off evidence |
+| Date | Laboratory | Role | Teacher sign-off evidence |
 | --- | --- | --- | --- |
-| September 1 | README orientation/setup | Project/database orientation | Restore, migration, startup |
-| September 7 | Guided PT Lab 1 — READ | Razor properties, collections, `foreach` | Seeds and five columns display |
-| September 8 | Guided PT Lab 2 — CREATE | Forms, GET/POST, binding | Valid create persists after restart |
-| September 9 | Guided PT Lab 3 — UPDATE | UPDATE and persistence pattern | Edited values persist after restart |
-| September 9 | Guided PT Lab 4 — DELETE | Confirmation and POST behavior | Confirmation is safe; deletion persists |
-| September 9 | Guided PT Lab 5 — Validation | Attributes, messages, `ModelState` | Invalid input is rejected and not saved |
-| September 10 | Final PT Completion Lab | All earlier checkpoints | Full integrated matrix and first formal check |
-| September 14 | Remediation and clean retest | Written repair list | Readiness recheck |
-| September 15–16 | Individual demonstrations | Functionally complete PT | Behavior and code explanation |
-| September 17 | Final submission | Demonstration and source cleanup | Teacher-approved source submission |
+| August 20 | Individual Lab 1 — .NET CLI and Project Structure | Prerequisite practice | Console project restores, builds, runs; files explained |
+| August 26 | Individual Lab 2 — First Razor Pages Web App | Prerequisite practice | Local web app, URL/port, request/response, visible edit |
+| September 1 | Guided PT Lab 0 — SimpleSIS Setup | Environment readiness | Restore, migration, startup |
+| September 2 | Individual Lab 3 — Razor Page and PageModel Flow | Prerequisite practice | `OnGet` property renders through `@Model` |
+| September 7 | Guided PT Lab 1 — READ Students | Cumulative PT | Seeds and five columns display |
+| September 8 | Guided PT Lab 2 — CREATE a Student | Cumulative PT | Valid create persists after restart |
+| September 9 | Guided PT Lab 3 — UPDATE a Student | Cumulative PT | Edited values persist after restart |
+| September 9 | Guided PT Lab 4 — DELETE with Confirmation | Cumulative PT | Confirmation is safe; deletion persists |
+| September 9 | Guided PT Lab 5 — Validation and Feedback | Cumulative PT | Invalid input is rejected and not saved |
+| September 10 | Final PT Completion Lab | Integration | Full integrated matrix and first formal check |
+| September 14 | Remediation and clean retest | Repair | Readiness recheck |
+| September 15–16 | Individual demonstrations | Authentication of learning | Behavior and code explanation |
+| September 17 | Final submission | Completion | Teacher-approved source submission |
 
-The five labs produce the PT incrementally. Do not award a second full product grade for the same behavior. Use lab checkpoints as progress/formative evidence or as the corresponding PT rubric evidence; the final PT grade also requires integration, persistence, testing, demonstration, and submission.
+The three prerequisite labs are formative readiness evidence and use disposable practice projects. The five PT labs produce SimpleSIS incrementally. Do not award duplicate full-product credit for prerequisite exercises or for the same PT behavior; the final PT grade also requires integration, persistence, testing, demonstration, and submission.
 
 ## Required test matrix
 

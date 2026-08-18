@@ -4,7 +4,7 @@
 **Project:** SimpleSIS  
 **Repository:** `https://github.com/paulquimpo-dev/simple-sis`  
 **Authoritative implementation branch:** `main`  
-**Document version:** 1.6
+**Document version:** 1.7
 **Last updated:** August 18, 2026  
 **Current implementation baseline:** commit `1f0e136`
 
@@ -283,6 +283,7 @@ Every material project revision must add an entry. Use one row per cohesive chan
 | 2026-08-18 | 1.4 | Student remote commit `ecf5813` | Separated repository/environment setup from implementation work: README owns clone through first run; the guided lab begins at READ and continues through final testing. | Zero-warning build; all 11 code TODO IDs remain aligned; documentation links verified | Removes duplicated instructions and clearly distinguishes guided prerequisites from assessed completion work |
 | 2026-08-18 | 1.5 | Student remote commit `82c9d85`; coordinated teacher/master revision | Reframed the student guide as five dated Guided PT Labs plus a Final PT Completion Lab and aligned the master calendar, teacher checkpoints, assessment policy, remediation, demonstrations, and submission sequence. | Five-pass cross-artifact audit passed; teacher/student builds zero warnings | Guided labs now cumulatively produce the PT without duplicating unrelated formal laboratory products |
 | 2026-08-18 | 1.6 | Student remote commit `0d8d819`; coordinated teacher/master documentation revision | Moved completion of the four missing shared form controls from the later Validation lab to CREATE as `TODO-PT-CREATE-03`; Validation retains message rendering and invalid-input proof as `TODO-PT-VALIDATE-02`. | Teacher and student builds: zero warnings/errors; browser CRUD, five-message server validation, 404 handling, and create/update/delete restart persistence passed | Students can now complete and test CREATE in scheduled order without skipping ahead to Lab 5 |
+| 2026-08-18 | 1.7 | Student remote commit `d1d0433`; coordinated teacher/master documentation revision | Converted the earlier guided practice into three named prerequisite individual laboratories on August 20, August 26, and September 2; named September 1 Guided PT Lab 0 setup; preserved September 7–10 as cumulative CRUD implementation. | Five-pass laboratory-pathway audit passed; both projects build with zero warnings/errors | Students now have a continuous hands-on laboratory pathway before formal PT coding without being asked to use untaught CRUD concepts |
 
 ### Required entry format for future changes
 
@@ -379,3 +380,17 @@ Completed August 18, 2026, before publishing blueprint version 1.5.
 | 5 | README-versus-guide responsibility, technical pins, entity contract, dates, links, terminology, and final Git diffs | Passed after audit-path trust and whitespace cleanup |
 
 Audit conclusion: README owns clone through first run; five scheduled Guided PT Labs cumulatively build the application; the Final PT Completion Lab establishes integrated functional readiness; remediation, individual demonstration, and submission complete the PT assessment. A subsequent student-view rehearsal found and corrected one ordering defect: the complete form is now built during CREATE, before its required persistence checkpoint.
+
+## 19. Prerequisite laboratory pathway audit
+
+Completed August 18, 2026, for blueprint version 1.7.
+
+| Pass | Focus | Result |
+| --- | --- | --- |
+| 1 | Chronological sequence and 2026 weekdays | Passed: August 20, August 26, September 1, September 2, and September 7–17 are ordered correctly |
+| 2 | Exact laboratory purpose across master, teacher guide, student README, prerequisite guide, Guided Lab, and checklist | Passed |
+| 3 | Prerequisite boundaries and solution leakage | Passed: practice uses separate console/Razor projects and does not complete Student CRUD TODOs |
+| 4 | Links, TODO traceability, Markdown whitespace, and repository separation | Passed: links resolve and all 11 PT TODO IDs remain aligned |
+| 5 | Technical regression | Passed: teacher and student projects build with zero warnings and zero errors |
+
+Audit conclusion: students receive meaningful individual laboratory work before September 7, Guided PT Lab 0 prepares SimpleSIS on September 1, and the cumulative CRUD implementation remains scheduled only after its prerequisite lessons.
