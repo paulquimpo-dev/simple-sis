@@ -38,6 +38,8 @@ These stable IDs should be used when the separate student scaffold is independen
 | `TODO-PT-DELETE-02` | `Pages/Students/Delete.cshtml.cs` — `OnPost` | Confirmed record is removed |
 | `TODO-PT-VALIDATE-02` | `_StudentForm.cshtml` — validation elements | Useful field messages display |
 
+TODO names identify their source location and final responsibility, not an unconditional lab date. `TODO-PT-CREATE-01` and `TODO-PT-UPDATE-02` are intentionally deferred to Guided PT Lab 5 because both require Module 7 `ModelState` instruction. Guided PT Labs 2 and 3 use teacher-approved valid values while students build the valid CREATE and UPDATE persistence paths.
+
 The student repository must contain hints and incomplete behavior only. Do not copy this repository's Git directory, branches, tags, commits, backup files, or completed handlers into it.
 
 ## Student laboratory pathway
