@@ -261,7 +261,8 @@ Last complete matrix run: August 18, 2026, against local PostgreSQL 18.
 | 2026-08-18 | Freeze the current `main` behavior as the student-scaffold baseline before portfolio work. | Ensures students receive the same architecture and expected output as the completed teacher reference. |
 | 2026-08-18 | Use stable TODO IDs across READ, CREATE, UPDATE, DELETE, and validation. | Makes checkpoints, teacher answers, tests, and rubric categories traceable. |
 | 2026-08-18 | Provide a progressive guided lab without completed solution statements. | Gives beginners enough structure to proceed while preserving reasoning, implementation, persistence, and explanation challenges. |
-| 2026-08-18 | Make the repository Guided Lab the cumulative formal PT laboratory sequence. | Eliminates unrelated lab products: READ is scheduled September 7, CREATE September 8, UPDATE/DELETE/Validation September 9, and final integration September 10. |
+| 2026-08-18 | Make the repository Guided Lab the cumulative formal PT laboratory sequence. | Eliminates unrelated lab products while keeping the required order READ → CREATE → UPDATE → DELETE → Validation → integration. Calendar dates are readiness targets rather than permission to bypass prerequisites. |
+| 2026-08-19 | Use prerequisite-gated target windows and preserve the final week as a buffer. | Module 5 may begin online September 4; Module 6 precedes CREATE; essential Module 7 theory is targeted by September 9; September 10 is readiness/integration, September 14 is protected completion/retest, and demonstrations may begin early and continue through September 16. |
 | 2026-08-18 | Require a Final PT Completion Lab after the five individual labs. | Completing component labs builds the application, while integration, persistence, testing, teacher checking, demonstration, and submission establish final PT completion. |
 
 ## 13. Open decisions and alignment issues
@@ -286,6 +287,7 @@ Every material project revision must add an entry. Use one row per cohesive chan
 | 2026-08-18 | 1.7 | Student remote commit `d1d0433`; coordinated teacher/master documentation revision | Converted the earlier guided practice into three named prerequisite individual laboratories on August 20, August 26, and September 2; named September 1 Guided PT Lab 0 setup; preserved September 7–10 as cumulative CRUD implementation. | Five-pass laboratory-pathway audit passed; both projects build with zero warnings/errors | Students now have a continuous hands-on laboratory pathway before formal PT coding without being asked to use untaught CRUD concepts |
 | 2026-08-18 | 1.8 | Student remote commit `8118d60`; coordinated teacher/master documentation revision | Replaced fixed laboratory assumptions with primary targets, readiness gates, and recovery windows; recorded the announced August 19 suspension and protected students from forced home-PC catch-up. | Suspension-path terminology, links, TODO boundaries, and both zero-warning/error builds passed | Missed classes roll forward without skipping theory, losing lab eligibility, or destabilizing later PT checkpoints |
 | 2026-08-18 | 1.9 | Student remote commit `5ca3ed7`; coordinated teacher/master documentation revision | Expanded both repository root READMEs from brief setup notes into complete clean-clone, project restore/build, PostgreSQL database preparation, private connection-string, provided migration, first-run verification, and troubleshooting guides. | Both projects build with zero warnings/errors; ignored-settings, placeholder-only credential, link, command, and solution-leakage checks passed | Setup and database instructions are now available immediately on each repository landing page |
+| 2026-08-19 | 2.0 | Coordinated teacher/master/student scheduling revision | Replaced the over-compressed September 8–10 lab deadlines with prerequisite-gated target windows, moved essential Module 7 theory ahead of dependent checks, made September 10 a readiness/integration target, protected September 14 for completion/retest, and allowed rolling demonstrations through September 16. | Cross-document date, prerequisite, lab-order, and deadline audit | Preserves instructional readiness and creates genuine leeway before final submission |
 
 ### Required entry format for future changes
 
@@ -363,7 +365,7 @@ After the teacher declares `SimpleSIS/main` complete:
 - [x] The approved teacher baseline is recorded.
 - [x] Student TODO/checklist/rubric mapping is complete.
 - [x] Guided lab stages and challenge checkpoints align with every code TODO ID.
-- [x] Guided lab dates align with the master September 7–10 development schedule.
+- [x] Guided lab target windows align with the master prerequisite-gated September 7–14 development schedule.
 - [x] Remote clean-clone restore and zero-warning build pass.
 - [x] Provided migration compatibility and seed infrastructure pass.
 - [x] Local Git-history and file-content leakage audits pass.
@@ -402,3 +404,5 @@ Audit conclusion: students receive meaningful individual laboratory work before 
 Laboratory dates are pacing targets, not unconditional deadlines. A laboratory proceeds only when its prerequisite instruction is complete and equitable school-PC access is available. Suspended or online-only PC blocks move to the documented recovery window or next available in-person block. No student is required to perform PC-dependent catch-up at home merely to protect the calendar.
 
 The August 19, 2026 suspension moves unfinished Lesson 1.2 and Formal Lecture Activity 1 forward. Individual Lab 1 remains possible on August 20 only if the lesson gate, demonstration, time, and PC gate are satisfied; otherwise August 24 is the preferred recovery target.
+
+For the main PT, use target windows instead of five rigid one-day deadlines. Module 5 may begin during the September 4 online consolidation period and must precede READ. Module 6 and its form demonstration must precede CREATE. Essential Module 7 CRUD, validation, confirmation, and persistence theory is targeted for completion by September 9 and must precede the corresponding UPDATE, DELETE, and validation checkpoints. September 10 is a readiness/integration checkpoint; September 14 is the protected final completion and clean-test buffer. Begin demonstrations whenever students are ready from September 10 onward so September 15–16 do not become a single bottleneck.

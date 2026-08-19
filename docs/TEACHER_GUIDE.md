@@ -62,17 +62,19 @@ Each lab provides goals, concept reminders, TODO locations, guided tasks, non-so
 | August 26 | August 27 or next PC block | Individual Lab 2 — First Razor Pages Web App | Prerequisite practice: local web app, URL/port, request/response, visible edit |
 | September 1 | September 2–3 or next PC block | Guided PT Lab 0 — SimpleSIS Setup | Environment readiness: restore, migration, startup |
 | September 2 | September 3 or before PT Lab 1 | Individual Lab 3 — Razor Page and PageModel Flow | Prerequisite practice: `OnGet` property renders through `@Model` |
-| September 7 | Guided PT Lab 1 — READ Students | Cumulative PT | Seeds and five columns display |
-| September 8 | Guided PT Lab 2 — CREATE a Student | Cumulative PT | Valid create persists after restart |
-| September 9 | Guided PT Lab 3 — UPDATE a Student | Cumulative PT | Edited values persist after restart |
-| September 9 | Guided PT Lab 4 — DELETE with Confirmation | Cumulative PT | Confirmation is safe; deletion persists |
-| September 9 | Guided PT Lab 5 — Validation and Feedback | Cumulative PT | Invalid input is rejected and not saved |
-| September 10 | Final PT Completion Lab | Integration | Full integrated matrix and first formal check |
-| September 14 | Remediation and clean retest | Repair | Readiness recheck |
-| September 15–16 | Individual demonstrations | Authentication of learning | Behavior and code explanation |
+| September 7 | September 8 or next PC block after Module 5 | Guided PT Lab 1 — READ Students | Cumulative PT: seeds and five columns display |
+| September 8–9 | September 10 after Module 6 | Guided PT Lab 2 — CREATE a Student | Cumulative PT: valid create persists after restart |
+| September 9–10 | September 14 if needed, after Module 7 CRUD instruction | Guided PT Lab 3 — UPDATE a Student | Cumulative PT: edited values persist after restart |
+| September 10 | September 14 if needed, after delete-confirmation instruction | Guided PT Lab 4 — DELETE with Confirmation | Cumulative PT: confirmation is safe; deletion persists |
+| September 10 | September 14 if needed, after validation and `ModelState` instruction | Guided PT Lab 5 — Validation and Feedback | Cumulative PT: invalid input is rejected and not saved |
+| September 10 | September 14 clean-test block | PT readiness and integration checkpoint | Run as much of the integrated matrix as reached; issue a specific repair list without penalizing unmet calendar targets |
+| September 14 | Same day, with only approved final repair afterward | Final PT Completion Lab and clean retest | Complete remaining gated work, full matrix, and readiness sign-off |
+| September 10 and 14–16 | Rolling, as each student becomes ready | Individual demonstrations | Authenticate behavior and code explanation without waiting for one last-week bottleneck |
 | September 17 | Final submission | Completion | Teacher-approved source submission |
 
 All dates are primary targets. For a suspension, online shift without equitable PC access, unfinished prerequisite, or setup failure, move the affected laboratory to its recovery window or next available in-person PC block. Do not compress theory, skip a checkpoint, or require home-PC coding to preserve the target date.
+
+Module 5 may be introduced during the September 4 online consolidation block after Quiz 2, then completed before READ. Module 6 must be taught and demonstrated before CREATE is checked. Module 7's essential CRUD, validation, confirmation, and persistence concepts should be completed by September 9 where pacing permits, with September 10 reserved mainly for gated application and integration. September 10 is a readiness target, not a universal hard completion deadline. September 14 is the protected completion/retest buffer; September 15–16 should be dominated by rolling demonstrations and limited repairs rather than first-time bulk implementation.
 
 For the announced August 19 suspension, move Formal Lecture Activity 1 and any unfinished Lesson 1.2 work to the next available teaching block. Conduct Individual Lab 1 on August 20 only if Lessons 1.1–1.4, the CLI demonstration, time, and PC access are all sufficient; otherwise use August 24 as the preferred recovery block.
 
